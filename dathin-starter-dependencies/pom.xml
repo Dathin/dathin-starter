@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.dathin.boot</groupId>
+    <artifactId>dathin-starter-dependencies</artifactId>
+    <version>0.0.3-SNAPSHOT</version>
+    <name>dathin-starter-dependencies</name>
+    <description>dathin-starter-dependencies</description>
+    <packaging>pom</packaging>
+    <properties>
+        <java.version>11</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.dathin.boot</groupId>
+                <artifactId>dathin-starter-openapi</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.dathin.boot</groupId>
+                <artifactId>dathin-starter-errorhandling</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.dathin.boot</groupId>
+                <artifactId>dathin-starter-model</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

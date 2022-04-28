@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.github.dathin.boot.dathinstartererrorhandling.controller.RestControllerAdvice, \
+  io.github.dathin.boot.dathinstartererrorhandling.error.DefaultErrorConfig
