@@ -17,17 +17,17 @@
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-openapi</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-errorhandling</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.3-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-model</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.3-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
