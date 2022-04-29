@@ -5,37 +5,33 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@EnableConfigurationProperties(OpenApiConfigProperties.class)
 public class OpenApiConfig {
 
-    private final String moduleName;
-    private final String apiVersion;
-
-    public OpenApiConfig() {
-        this.moduleName = "pedro";
-        this.apiVersion = "v1";
-    }
+    private static final Logger LOGGER = LoggerFactory.getLogger(OpenApiConfig.class);
 
     @Bean
-    @ConditionalOnBean
-    public OpenAPI customOpenAPI() {
-        var securitySchemeName = "bearerAuth";
-        var apiTitle = String.format("%s API", moduleName);
-        return new OpenAPI()
-                .addSecurityItem(new SecurityRequirement().addList(securitySchemeName))
+    public OpenAPI customOpenAPI(OpenApiConfigProperties openApiConfigProperties) {
+        var openApi = new OpenAPI()
+                .addSecurityItem(new SecurityRequirement().addList("default"))
                 .components(
                         new Components()
-                                .addSecuritySchemes(securitySchemeName,
+                                .addSecuritySchemes("default",
                                         new SecurityScheme()
-                                                .name(securitySchemeName)
+                                                .name("default")
                                                 .type(SecurityScheme.Type.HTTP)
                                                 .scheme("bearer")
                                                 .bearerFormat("JWT")
                                 )
-                ).info(new Info().title(apiTitle).version(apiVersion));
+                ).info(new Info().title(openApiConfigProperties.getName()).version(openApiConfigProperties.getVersion()));
+        LOGGER.info("Open API ui available at /swagger-ui/index.html");
+        return openApi;
     }
 }
