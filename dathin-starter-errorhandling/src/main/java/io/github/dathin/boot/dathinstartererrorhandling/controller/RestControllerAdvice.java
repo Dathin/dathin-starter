@@ -3,6 +3,8 @@ package io.github.dathin.boot.dathinstartererrorhandling.controller;
 import io.github.dathin.boot.dathinstartererrorhandling.exception.GenericException;
 import io.github.dathin.boot.dathinstartererrorhandling.response.FormResponse;
 import io.github.dathin.boot.dathinstartererrorhandling.response.GenericResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -14,6 +16,10 @@ import java.util.List;
 
 @org.springframework.web.bind.annotation.RestControllerAdvice
 public class RestControllerAdvice {
+
+    static {
+        LoggerFactory.getLogger(RestControllerAdvice.class).info("Dathin's rest controller advice active");
+    }
 
     @ExceptionHandler(GenericException.class)
     public ResponseEntity<GenericResponse> genericResponseHandler(GenericException ex) {

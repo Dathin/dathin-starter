@@ -1,5 +1,7 @@
 package io.github.dathin.boot.dathinstartererrorhandling.error;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.servlet.error.DefaultErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
@@ -8,10 +10,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.web.context.request.WebRequest;
 
+
 import java.util.Map;
 
 @Configuration
 public class DefaultErrorConfig {
+
+    static {
+        LoggerFactory.getLogger(DefaultErrorConfig.class).info("Default error config set to just display error attribute");
+    }
 
     @Bean
     @Primary
