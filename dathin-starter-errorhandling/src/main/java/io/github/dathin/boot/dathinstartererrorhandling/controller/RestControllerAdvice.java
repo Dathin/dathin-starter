@@ -1,8 +1,8 @@
 package io.github.dathin.boot.dathinstartererrorhandling.controller;
 
-import io.github.dathin.boot.dathinstartererrorhandling.exception.GenericException;
-import io.github.dathin.boot.dathinstartererrorhandling.response.FormResponse;
-import io.github.dathin.boot.dathinstartererrorhandling.response.GenericResponse;
+import io.github.dathin.boot.dathinstartermodel.exception.GenericException;
+import io.github.dathin.boot.dathinstartermodel.response.FormResponse;
+import io.github.dathin.boot.dathinstartermodel.response.GenericResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -41,7 +41,7 @@ public class RestControllerAdvice {
         for (FieldError fieldError : ex.getBindingResult().getFieldErrors()) {
             formExceptionList.add(new FormResponse(fieldError.getField(), fieldError.getDefaultMessage()));
         }
-        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(formExceptionList);
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY.value()).body(formExceptionList);
     }
 
     private void logInfo(Exception ex) {

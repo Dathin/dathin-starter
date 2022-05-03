@@ -1,4 +1,4 @@
-package io.github.dathin.boot.dathinstartererrorhandling.response;
+package io.github.dathin.boot.dathinstartermodel.response;
 
 public class GenericResponse {
 

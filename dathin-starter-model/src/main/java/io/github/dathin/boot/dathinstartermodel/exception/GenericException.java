@@ -1,17 +1,17 @@
-package io.github.dathin.boot.dathinstartererrorhandling.exception;
-
-import org.springframework.http.HttpStatus;
+package io.github.dathin.boot.dathinstartermodel.exception;
 
 public class GenericException extends RuntimeException {
     private String error;
 
-    private HttpStatus status;
+    private int status;
 
-    public GenericException(HttpStatus status) {
+    public GenericException() {
+    }
+    public GenericException(int status) {
         this.status = status;
     }
 
-    public GenericException(String error, HttpStatus status) {
+    public GenericException(String error, int status) {
         this.error = error;
         this.status = status;
     }
@@ -24,11 +24,11 @@ public class GenericException extends RuntimeException {
         this.error = error;
     }
 
-    public HttpStatus getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(HttpStatus status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

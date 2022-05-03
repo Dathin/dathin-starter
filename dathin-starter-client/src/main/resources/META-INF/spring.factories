@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  io.github.dathin.boot.dathinstarterclient.client.InternalClientBuilder, \
+  io.github.dathin.boot.dathinstarterclient.client.InternalPropagationInterceptor, \
+  io.github.dathin.boot.dathinstarterclient.client.InternalPropagationErrorDecoder
