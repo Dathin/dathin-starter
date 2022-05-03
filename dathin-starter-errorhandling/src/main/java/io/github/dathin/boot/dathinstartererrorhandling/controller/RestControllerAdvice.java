@@ -41,7 +41,7 @@ public class RestControllerAdvice {
         for (FieldError fieldError : ex.getBindingResult().getFieldErrors()) {
             formExceptionList.add(new FormResponse(fieldError.getField(), fieldError.getDefaultMessage()));
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(formExceptionList);
+        return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(formExceptionList);
     }
 
     private void logInfo(Exception ex) {
