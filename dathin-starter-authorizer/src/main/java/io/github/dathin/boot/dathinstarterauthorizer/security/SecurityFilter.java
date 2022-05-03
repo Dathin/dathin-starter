@@ -8,8 +8,6 @@ import io.github.dathin.boot.dathinstarterauthorizer.model.user.UserToken;
 import io.github.dathin.boot.dathinstarterauthorizer.service.AuthenticationService;
 import io.github.dathin.boot.dathinstartermodel.exception.GenericException;
 import org.springframework.http.HttpHeaders;
-import org.springframework.stereotype.Component;
-import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
@@ -17,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Base64;
 
-@Component
-public class SecurityFilter extends OncePerRequestFilter {
+public class SecurityFilter extends DathinSecurityFilter {
+
 
     private final SecurityFilterExceptionHandler securityFilterExceptionHandler;
 

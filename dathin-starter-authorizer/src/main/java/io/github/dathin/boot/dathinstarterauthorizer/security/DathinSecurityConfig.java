@@ -1,5 +1,6 @@
 package io.github.dathin.boot.dathinstarterauthorizer.security;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -7,17 +8,22 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 @Configuration
 @EnableWebSecurity
 public class DathinSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private final SecurityFilter securityFilter;
+	static {
+		LoggerFactory.getLogger(DathinSecurityConfig.class).info("Initialized Dathin authorizer");
+	}
+
+	private final DathinSecurityFilter dathinSecurityFilter;
 
 	private final SecurityFilterExceptionHandler securityFilterExceptionHandler;
 
-	public DathinSecurityConfig(SecurityFilter securityFilter, SecurityFilterExceptionHandler securityFilterExceptionHandler) {
-		this.securityFilter = securityFilter;
+	public DathinSecurityConfig(DathinSecurityFilter dathinSecurityFilter, SecurityFilterExceptionHandler securityFilterExceptionHandler) {
+		this.dathinSecurityFilter = dathinSecurityFilter;
 		this.securityFilterExceptionHandler = securityFilterExceptionHandler;
 	}
 
@@ -37,7 +43,7 @@ public class DathinSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.authorizeRequests().antMatchers(unAuthEndpoints).permitAll().anyRequest().authenticated()
 				.and()
-				.addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class).exceptionHandling()
+				.addFilterBefore(dathinSecurityFilter, UsernamePasswordAuthenticationFilter.class).exceptionHandling()
 				.authenticationEntryPoint(securityFilterExceptionHandler);
 	}
 
