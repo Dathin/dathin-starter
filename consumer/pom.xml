@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.dathin.boot</groupId>
-        <artifactId>dathin-starter-dependencies</artifactId>
+        <artifactId>dathin-starter-parent</artifactId>
         <version>0.0.3-SNAPSHOT</version>
-        <relativePath>../dathin-starter-parent/pom.xml</relativePath>
+        <relativePath/>
     </parent>
     <groupId>io.github.dathin.consumer</groupId>
     <artifactId>consumer</artifactId>
