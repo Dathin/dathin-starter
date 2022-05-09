@@ -19,6 +19,8 @@
         <module>dathin-starter-errorhandling</module>
         <module>dathin-starter-model</module>
         <module>dathin-starter-openapi</module>
+        <!--Consumer is just to check if nothing breaks from dependencies end-->
+        <module>consumer</module>
     </modules>
 
     <dependencyManagement>
