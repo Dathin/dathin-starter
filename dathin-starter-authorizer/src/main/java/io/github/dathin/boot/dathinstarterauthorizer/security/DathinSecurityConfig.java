@@ -30,7 +30,6 @@ public class DathinSecurityConfig extends WebSecurityConfigurerAdapter {
 		this.dathinSecurityConfigProperties = dathinSecurityConfigProperties;
 	}
 
-	//TOLIB
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		http
@@ -52,12 +51,12 @@ public class DathinSecurityConfig extends WebSecurityConfigurerAdapter {
 		var publicPaths = dathinSecurityConfigProperties.getPublicPaths();
 
 		if(!dathinSecurityConfigProperties.isDisableSwagger()) {
-			return mergeArrays(swaggerPaths, publicPaths);
+			return mergePathArrays(swaggerPaths, publicPaths);
 		}
 		return publicPaths;
 	}
 
-	private String[] mergeArrays(String[] swaggerPaths, String[] publicPaths) {
+	private String[] mergePathArrays(String[] swaggerPaths, String[] publicPaths) {
 		var swaggerLen = swaggerPaths.length;
 		var publicLen = publicPaths.length;
 		var twoArraysLen = swaggerLen + publicLen;

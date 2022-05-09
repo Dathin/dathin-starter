@@ -2,6 +2,7 @@ package io.github.dathin.boot.dathinstarterauthorizer.security;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.github.dathin.boot.dathinstarterauthorizer.client.DathinSessionClient;
 import io.github.dathin.boot.dathinstarterauthorizer.model.exception.CustomAuthenticationException;
 import io.github.dathin.boot.dathinstarterauthorizer.model.user.UserToken;
@@ -58,9 +59,12 @@ public class SecurityFilter extends DathinSecurityFilter {
     }
 
     private UserToken getUserFromToken(String token) throws JsonProcessingException {
+
         var tokenPayloadBase64 = token.split("\\.")[1];
         var tokenPayload = new String(Base64.getDecoder().decode(tokenPayloadBase64));
-        var userToken = objectMapper.readValue(tokenPayload, UserToken.class);
+        var objectNode = objectMapper.readValue(tokenPayload, ObjectNode.class);
+        var userToken = new UserToken();
+        userToken.setId(objectNode.get("userId").asInt());
         return userToken;
     }
 
