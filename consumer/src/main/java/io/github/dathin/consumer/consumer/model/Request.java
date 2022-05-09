@@ -1,7 +1,5 @@
 package io.github.dathin.consumer.consumer.model;
 
-import lombok.Data;
-
 public class Request {
 
     private String id;

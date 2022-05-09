@@ -1,10 +1,9 @@
 package io.github.dathin.consumer.consumer.controller;
 
-import io.github.dathin.boot.dathinstartererrorhandling.exception.GenericException;
+import io.github.dathin.boot.dathinstartermodel.exception.GenericException;
 import io.github.dathin.consumer.consumer.mapper.ResponseMapper;
 import io.github.dathin.consumer.consumer.model.Request;
 import io.github.dathin.consumer.consumer.model.Response;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +24,7 @@ public class MainController {
 
     @PatchMapping
     public void xD() {
-        throw new GenericException("fuck", HttpStatus.ALREADY_REPORTED);
+        throw new GenericException("fuck", HttpStatus.ALREADY_REPORTED.value());
     }
 
 }

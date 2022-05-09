@@ -3,10 +3,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.7</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>io.github.dathin.boot</groupId>
+        <artifactId>dathin-starter-dependencies</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+        <relativePath>../dathin-starter-parent/pom.xml</relativePath>
     </parent>
     <groupId>io.github.dathin.consumer</groupId>
     <artifactId>consumer</artifactId>
@@ -17,29 +17,7 @@
         <java.version>11</java.version>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.github.dathin.boot</groupId>
-                <artifactId>dathin-starter-dependencies</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
@@ -47,14 +25,15 @@
         </dependency>
 
         <dependency>
-            <groupId>io.github.dathin.boot</groupId>
-            <artifactId>dathin-starter-errorhandling</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
-            <artifactId>dathin-starter-model</artifactId>
+            <artifactId>dathin-starter-errorhandling</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -66,18 +45,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.mapstruct</groupId>
-                            <artifactId>mapstruct-processor</artifactId>
-                            <version>1.4.2.Final</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
             </plugin>
         </plugins>
     </build>
