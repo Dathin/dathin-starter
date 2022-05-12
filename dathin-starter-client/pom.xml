@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-client</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>${dathin.client.version}</version>
     <name>dathin-starter-client</name>
     <description>dathin-starter-client</description>
     <parent>
@@ -12,9 +12,6 @@
         <version>0.0.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -26,12 +23,13 @@
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
             <artifactId>dathin-starter-model</artifactId>
+            <version>${dathin.model.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.openfeign</groupId>
             <artifactId>feign-core</artifactId>
-            <version>11.8</version>
+            <version>${feign.core.version}</version>
         </dependency>
 
     </dependencies>

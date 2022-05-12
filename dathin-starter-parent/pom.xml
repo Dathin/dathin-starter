@@ -2,49 +2,44 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.github.dathin.boot</groupId>
     <artifactId>dathin-starter-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>${dathin.parent.version}</version>
     <name>dathin-starter-parent</name>
     <description>dathin-starter-parent</description>
     <packaging>pom</packaging>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
+    <parent>
+        <groupId>io.github.dathin.boot</groupId>
+        <artifactId>dathin-starter</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-openapi</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
+                <version>${dathin.openapi.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-errorhandling</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
+                <version>${dathin.errorhandling.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-model</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
+                <version>${dathin.model.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-authorizer</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
+                <version>${dathin.authorizer.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-client</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.6.7</version>
-                <type>pom</type>
-                <scope>import</scope>
+                <version>${dathin.client.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -74,13 +69,13 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>3.8.1</version>
                     <configuration>
-                        <source>11</source>
-                        <target>11</target>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
                         <annotationProcessorPaths>
                             <path>
                                 <groupId>org.mapstruct</groupId>
                                 <artifactId>mapstruct-processor</artifactId>
-                                <version>1.4.2.Final</version>
+                                <version>${mapstruct.version}</version>
                             </path>
                         </annotationProcessorPaths>
                     </configuration>

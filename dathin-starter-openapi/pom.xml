@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-openapi</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>${dathin.openapi.version}</version>
     <name>dathin-starter-openapi</name>
     <parent>
         <groupId>io.github.dathin.boot</groupId>
@@ -12,9 +12,6 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     <description>dathin-starter-openapi</description>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <dependencies>
 
@@ -27,7 +24,7 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.8</version>
+            <version>${springdoc-openapi-ui.version}</version>
         </dependency>
     </dependencies>
 

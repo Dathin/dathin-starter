@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-errorhandling</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>${dathin.errorhandling.version</version>
     <name>dathin-starter-errorhandling</name>
     <description>dathin-starter-errorhandling</description>
     <parent>
@@ -12,21 +12,6 @@
         <version>0.0.3-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <properties>
-        <java.version>11</java.version>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.github.dathin.boot</groupId>
-                <artifactId>dathin-starter-dependencies</artifactId>
-                <version>0.0.3-SNAPSHOT</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
 
@@ -44,6 +29,7 @@
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
             <artifactId>dathin-starter-model</artifactId>
+            <version>${dathin.model.version}</version>
         </dependency>
 
     </dependencies>
