@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-errorhandling</artifactId>
-    <version>${dathin.errorhandling.version</version>
+    <version>${dathin.errorhandling.version}</version>
     <name>dathin-starter-errorhandling</name>
     <description>dathin-starter-errorhandling</description>
     <parent>

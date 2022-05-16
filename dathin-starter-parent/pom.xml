@@ -2,17 +2,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>io.github.dathin.boot</groupId>
     <artifactId>dathin-starter-parent</artifactId>
-    <version>${dathin.parent.version}</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>dathin-starter-parent</name>
     <description>dathin-starter-parent</description>
     <packaging>pom</packaging>
-    <parent>
-        <groupId>io.github.dathin.boot</groupId>
-        <artifactId>dathin-starter</artifactId>
-        <version>0.0.3-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+
+    <properties>
+        <!--Java info-->
+        <java.version>11</java.version>
+        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <!--Spring framework info-->
+        <spring.boot.version>2.6.7</spring.boot.version>
+        <!--Dependencies info-->
+        <feign.core.version>11.8</feign.core.version>
+        <springdoc-openapi-ui.version>1.6.8</springdoc-openapi-ui.version>
+        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <!--Modules info-->
+        <dathin.authorizer.version>0.0.3-SNAPSHOT</dathin.authorizer.version>
+        <dathin.client.version>0.0.3-SNAPSHOT</dathin.client.version>
+        <dathin.errorhandling.version>0.0.3-SNAPSHOT</dathin.errorhandling.version>
+        <dathin.model.version>0.0.3-SNAPSHOT</dathin.model.version>
+        <dathin.openapi.version>0.0.3-SNAPSHOT</dathin.openapi.version>
+    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -40,6 +53,13 @@
                 <groupId>io.github.dathin.boot</groupId>
                 <artifactId>dathin-starter-client</artifactId>
                 <version>${dathin.client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
