@@ -3,23 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-authorizer</artifactId>
-    <version>${dathin.authorizer.version}</version>
+    <version>1</version>
     <name>dathin-starter-authorizer</name>
     <description>dathin-starter-authorizer</description>
     <parent>
         <groupId>io.github.dathin.boot</groupId>
         <artifactId>dathin-starter</artifactId>
-        <version>0.0.3-SNAPSHOT</version>
+        <version>1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,13 +30,13 @@
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
             <artifactId>dathin-starter-model</artifactId>
-            <version>${dathin.model.version}</version>
+            <version>1</version>
         </dependency>
 
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
             <artifactId>dathin-starter-client</artifactId>
-            <version>${dathin.client.version}</version>
+            <version>1</version>
         </dependency>
 
     </dependencies>

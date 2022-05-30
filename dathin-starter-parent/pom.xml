@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.dathin.boot</groupId>
     <artifactId>dathin-starter-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>1</version>
     <name>dathin-starter-parent</name>
     <description>dathin-starter-parent</description>
     <packaging>pom</packaging>
@@ -13,18 +13,29 @@
         <!--Java info-->
         <java.version>11</java.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--Spring framework info-->
         <spring.boot.version>2.6.7</spring.boot.version>
         <!--Dependencies info-->
         <feign.core.version>11.8</feign.core.version>
         <springdoc-openapi-ui.version>1.6.8</springdoc-openapi-ui.version>
         <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <!--Format-->
+        <java-format.version>0.0.28</java-format.version>
+        <jhusky.version>1.0.1</jhusky.version>
+        <!--Tests info-->
+        <junit.version>5.7.2</junit.version>
+        <mockito.version>3.10.0</mockito.version>
+        <jacoco.version>0.8.7</jacoco.version>
+        <maven-surefire.version>2.21.0</maven-surefire.version>
+        <junit-surefire.version>1.2.0</junit-surefire.version>
         <!--Modules info-->
-        <dathin.authorizer.version>0.0.3-SNAPSHOT</dathin.authorizer.version>
-        <dathin.client.version>0.0.3-SNAPSHOT</dathin.client.version>
-        <dathin.errorhandling.version>0.0.3-SNAPSHOT</dathin.errorhandling.version>
-        <dathin.model.version>0.0.3-SNAPSHOT</dathin.model.version>
-        <dathin.openapi.version>0.0.3-SNAPSHOT</dathin.openapi.version>
+        <dathin.authorizer.version>1</dathin.authorizer.version>
+        <dathin.client.version>1</dathin.client.version>
+        <dathin.errorhandling.version>1</dathin.errorhandling.version>
+        <dathin.model.version>1</dathin.model.version>
+        <dathin.openapi.version>1</dathin.openapi.version>
+        <dathin.test.version>1</dathin.test.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +66,12 @@
                 <version>${dathin.client.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.github.dathin.boot</groupId>
+                <artifactId>dathin-starter-test</artifactId>
+                <version>${dathin.test.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
@@ -73,11 +90,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -99,6 +111,66 @@
                             </path>
                         </annotationProcessorPaths>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.junit.platform</groupId>
+                            <artifactId>junit-platform-surefire-provider</artifactId>
+                            <version>${junit-surefire.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.junit.jupiter</groupId>
+                            <artifactId>junit-jupiter-engine</artifactId>
+                            <version>${junit.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.github.dathin</groupId>
+                    <artifactId>jhusky</artifactId>
+                    <version>${jhusky.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>io.spring.javaformat</groupId>
+                    <artifactId>spring-javaformat-maven-plugin</artifactId>
+                    <version>${java-format.version}</version>
+                    <executions>
+                        <execution>
+                            <phase>validate</phase>
+                            <inherited>true</inherited>
+                            <goals>
+                                <goal>validate</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>jacoco-report</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
             </plugins>
         </pluginManagement>

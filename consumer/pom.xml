@@ -5,12 +5,12 @@
     <parent>
         <groupId>io.github.dathin.boot</groupId>
         <artifactId>dathin-starter-parent</artifactId>
-        <version>0.0.3-SNAPSHOT</version>
+        <version>1</version>
         <relativePath>../dathin-starter-parent/pom.xml</relativePath>
     </parent>
     <groupId>io.github.dathin.consumer</groupId>
     <artifactId>consumer</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1</version>
     <name>consumer</name>
     <description>consumer</description>
 
@@ -19,6 +19,12 @@
         <dependency>
             <groupId>io.github.dathin.boot</groupId>
             <artifactId>dathin-starter-authorizer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.dathin.boot</groupId>
+            <artifactId>dathin-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -52,6 +58,14 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

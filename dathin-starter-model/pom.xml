@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>dathin-starter-model</artifactId>
-    <version>${dathin.model.version}</version>
+    <version>1</version>
     <name>dathin-starter-model</name>
     <description>dathin-starter-model</description>
     <parent>
         <groupId>io.github.dathin.boot</groupId>
         <artifactId>dathin-starter</artifactId>
-        <version>0.0.3-SNAPSHOT</version>
+        <version>1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -18,7 +18,7 @@
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
-            <version>${mapstruct.version}</version>
+            <version>1.4.2.Final</version>
         </dependency>
 
     </dependencies>

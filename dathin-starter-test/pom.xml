@@ -2,24 +2,38 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>dathin-starter-openapi</artifactId>
+    <artifactId>dathin-starter-test</artifactId>
     <version>1</version>
-    <name>dathin-starter-openapi</name>
+    <name>dathin-starter-test</name>
+    <description>dathin-starter-test</description>
     <parent>
         <groupId>io.github.dathin.boot</groupId>
         <artifactId>dathin-starter</artifactId>
         <version>1</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <description>dathin-starter-openapi</description>
 
     <dependencies>
 
         <dependency>
-            <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.8</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.2</version>
+<!--            <scope>test</scope>-->
         </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>3.10.0</version>
+<!--            <scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.10.0</version>
+<!--            <scope>test</scope>-->
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -30,5 +44,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
