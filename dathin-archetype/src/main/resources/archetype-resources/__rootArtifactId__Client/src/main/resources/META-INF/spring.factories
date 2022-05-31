@@ -1,0 +1,2 @@
+#org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.github.dathin.onesignup.client.OnesignupClients
+//TODO: Your client

@@ -27,6 +27,8 @@
         <module>dathin-starter-test</module>
         <!--This is going to be used for dathin projects-->
         <module>dathin-starter-parent</module>
+        <!--This is going to be used to scaffold dathin projects-->
+        <module>dathin-archetype</module>
         <!--Consumer is just to check if nothing breaks from dependencies end-->
         <module>consumer</module>
         <module>cli</module>
