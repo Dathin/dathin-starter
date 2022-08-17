@@ -27,7 +27,7 @@
 ```
 
 ```xml
-<!--Use All managed plugins-->
+<!--Use All Managed Plugins-->
 <plugins>
     <plugin>
         <groupId>io.github.dathin</groupId>
