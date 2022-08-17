@@ -64,6 +64,17 @@ Specify Parent will do a couple of things:
 - Configure plugin management for ```maven-compiler-plugin``` to already support mapstruct under ```<pluginManagement>```
 - Dathin and Spring dependency management (version) under ```<dependencyManagement>```
 
+# Initialize new project
+Go to [dathin-archetype](dathin-archetype/README.md)
+
+# Example projects
+- [Dathin Session](https://github.com/Dathin/dathin-session)
+- [Onesignup](https://github.com/Dathin/onesignup)
+
 # Versions
 - Spring: 2.6.7
 - Java: 11
+- Maven: 3.8.1
+
+# Todo
+- Support lombok
