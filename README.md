@@ -5,53 +5,37 @@
 <parent>
     <groupId>io.github.dathin.boot</groupId>
     <artifactId>dathin-starter-parent</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>1</version>
     <relativePath/>
 </parent>
 ```
 
 ```xml
-<!--Use Managed Maven Compiler Plugin-->
-<plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-compiler-plugin</artifactId>
-</plugin>
-```
-
-```xml
-<!--Use Managed Spring Boot Maven Plugin-->
-<plugin>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-maven-plugin</artifactId>
-</plugin>
-```
-
-```xml
 <!--Use All Managed Plugins-->
 <plugins>
-    <plugin>
-        <groupId>io.github.dathin</groupId>
-        <artifactId>jhusky</artifactId>
-    </plugin>
-    <plugin>
-        <groupId>io.spring.javaformat</groupId>
-        <artifactId>spring-javaformat-maven-plugin</artifactId>
-    </plugin>
-    <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-    </plugin>
-    <plugin>
+    <plugin><!--Required-->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
     </plugin>
-    <plugin>
+    <plugin><!--Required-->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+    <plugin><!--Required for testing-->
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
     </plugin>
-    <plugin>
+    <plugin><!--Required for testing-->
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
+    </plugin>
+    <plugin><!--Optional for git hooks-->
+        <groupId>io.github.dathin</groupId>
+        <artifactId>jhusky</artifactId>
+    </plugin>
+    <plugin><!--Optional for formating-->
+        <groupId>io.spring.javaformat</groupId>
+        <artifactId>spring-javaformat-maven-plugin</artifactId>
     </plugin>
 </plugins>
 ```
@@ -77,4 +61,5 @@ Go to [dathin-archetype](dathin-archetype/README.md)
 - Maven: 3.8.1
 
 # Todo
+- remove '-' from artifacts, like dathin-starter to dathinstarter also in dathin-session
 - Support lombok
