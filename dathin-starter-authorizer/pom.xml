@@ -39,6 +39,12 @@
             <version>1</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.dathin</groupId>
+            <artifactId>dathin-session-client</artifactId>
+            <version>1</version>
+        </dependency>
+
     </dependencies>
 
     <build>

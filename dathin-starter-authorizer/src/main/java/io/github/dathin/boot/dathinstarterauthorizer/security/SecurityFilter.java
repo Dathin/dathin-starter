@@ -3,7 +3,7 @@ package io.github.dathin.boot.dathinstarterauthorizer.security;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import io.github.dathin.boot.dathinstarterauthorizer.client.DathinSessionClient;
+import io.github.dathin.dathinsession.client.UserClient;
 import io.github.dathin.boot.dathinstarterauthorizer.model.exception.CustomAuthenticationException;
 import io.github.dathin.boot.dathinstarterauthorizer.model.user.UserToken;
 import io.github.dathin.boot.dathinstarterauthorizer.service.AuthenticationService;
@@ -25,13 +25,13 @@ public class SecurityFilter extends DathinSecurityFilter {
 
     private final ObjectMapper objectMapper;
 
-    private final DathinSessionClient dathinSessionClient;
+    private final UserClient userClient;
 
-    public SecurityFilter(SecurityFilterExceptionHandler securityFilterExceptionHandler, AuthenticationService authenticationService, ObjectMapper objectMapper, DathinSessionClient dathinSessionClient) {
+    public SecurityFilter(SecurityFilterExceptionHandler securityFilterExceptionHandler, AuthenticationService authenticationService, ObjectMapper objectMapper, UserClient userClient) {
         this.securityFilterExceptionHandler = securityFilterExceptionHandler;
         this.authenticationService = authenticationService;
         this.objectMapper = objectMapper;
-        this.dathinSessionClient = dathinSessionClient;
+        this.userClient = userClient;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class SecurityFilter extends DathinSecurityFilter {
         var token = httpServletRequest.getHeader(HttpHeaders.AUTHORIZATION);
         try {
             if (token != null) {
-                dathinSessionClient.userValidate();
+                userClient.validateUser();
                 setUserFromToken(token);
             }
             filterChain.doFilter(httpServletRequest, httpServletResponse);

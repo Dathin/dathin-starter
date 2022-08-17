@@ -2,6 +2,5 @@ org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   io.github.dathin.boot.dathinstarterauthorizer.security.DathinSecurityConfig, \
   io.github.dathin.boot.dathinstarterauthorizer.security.SecurityFilterConfig, \
   io.github.dathin.boot.dathinstarterauthorizer.security.SecurityFilterExceptionHandler, \
-  io.github.dathin.boot.dathinstarterauthorizer.client.FeignClients, \
   io.github.dathin.boot.dathinstarterauthorizer.service.AuthenticationService
 
